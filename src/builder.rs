@@ -1,6 +1,6 @@
 use serde::ser::SerializeMap;
 use serde::{Serialize, Serializer};
-use quick_xml::{DeError, se::to_string};
+use quick_xml::{SeError, se::to_string};
 
 #[derive(Debug, Serialize, PartialEq, Eq)]
 #[serde(rename = "urlset")]
@@ -31,7 +31,7 @@ impl UrlSet {
         }
     }
 
-    pub fn to_xml(&self) -> Result<String,DeError> {
+    pub fn to_xml(&self) -> Result<String,SeError> {
         return to_string(&self);
     }
 }
